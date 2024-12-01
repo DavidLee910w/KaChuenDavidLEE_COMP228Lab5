@@ -64,17 +64,40 @@
                         <TextField fx:id="gameTitleField" />
                     </HBox>
                     <HBox spacing="10">
+                        <Label text="Player ID:" />
+                        <TextField fx:id="playerIdInputField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Score:" />
+                        <TextField fx:id="Score" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Playing Date:" />
+                        <DatePicker fx:id="PlayingDate"/>
+                    </HBox>
+                    <HBox spacing="10">
                         <Button text="Insert Game" fx:id="insertGameButton" onAction="#handleInsertGame" />
                     </HBox>
                 </VBox>
             </TitledPane>
 
-            <TitledPane text="Player and Game Relationship" expanded="false">
-                <VBox>
+            <TitledPane text="Player and Game Relationship" expanded="true">
+                <VBox spacing="5">
                     <padding>
                         <Insets top="10" right="10" bottom="10" left="10"/>
                     </padding>
-                    <!-- Future expansion for relationships -->
+                    <HBox spacing="10">
+                        <Label text="Enquire Game Rating by Player ID:" />
+                        <TextField fx:id="playerIdQueryField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Button text="Enquire Rating" fx:id="enquirePlayerRating" onAction="#enquirePlayerRating" />
+                    </HBox>
+                    <TextArea fx:id="resultTextArea"
+                              wrapText="true"
+                              editable="false"
+                              prefRowCount="10"
+                              prefColumnCount="40"/>
                 </VBox>
             </TitledPane>
         </VBox>
