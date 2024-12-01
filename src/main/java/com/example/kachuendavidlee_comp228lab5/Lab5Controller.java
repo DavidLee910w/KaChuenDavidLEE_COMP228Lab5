@@ -45,7 +45,7 @@ public class Lab5Controller {
     private static final String DB_USER = "COMP228_F24_soh_16";
     private static final String DB_PASSWORD = "Devi1027";
 
-    // Establish a connection to the Oracle database
+    // Connect to the Oracle database
     private Connection connectToDatabase() {
         Connection connection = null;
         try {
@@ -65,7 +65,7 @@ public class Lab5Controller {
         return connection;
     }
 
-    // Example: Insert a player into the database
+    //Insert a player into the database
     private void insertPlayerIntoDatabase(Integer playerId, String firstName, String lastName, String address,
                                           String postalCode, String province, Integer phoneNumber) {
         String insertQuery = "INSERT INTO Player (Player_ID, First_Name, Last_Name, Address, Postal_Code, Province, Phone_Number) "
@@ -135,7 +135,7 @@ public class Lab5Controller {
             Double score = Double.parseDouble(Score.getText());
             String playingDate = PlayingDate.getValue().toString(); // Convert LocalDate to String
 
-            // First insert the game
+            // First insert the game,creating a playerGameID by combining playerId and gameId
             insertGameIntoDatabase(gameId, gameTitle);
 
             int playerGameId = gameId + (playerId*1000);
@@ -259,31 +259,6 @@ public class Lab5Controller {
             resultTextArea.setText("Error: Please enter a valid numeric Player ID");
         }
     }
-//    @FXML
-//    private void displayPlayerGameReport() {
-//        String query = "SELECT p.PLAYER_ID, p.FIRST_NAME, p.LAST_NAME, g.GAME_TITLE, pg.PLAYING_DATE, pg.SCORE "
-//                + "FROM Player p "
-//                + "JOIN Playerandgame pg ON p.PLAYER_ID = pg.PLAYER_ID "
-//                + "JOIN Game g ON g.GAME_ID = pg.GAME_ID";
-//
-//        try (Connection connection = connectToDatabase();
-//             PreparedStatement preparedStatement = connection.prepareStatement(query);
-//             ResultSet resultSet = preparedStatement.executeQuery()) {
-//
-//            System.out.println("Player Game Report:");
-//            while (resultSet.next()) {
-//                System.out.printf("Player: %s %s, Game: %s, Date: %s, Score: %.1f%n",
-//                        resultSet.getString("FIRST_NAME"),
-//                        resultSet.getString("LAST_NAME"),
-//                        resultSet.getString("GAME_TITLE"),
-//                        resultSet.getDate("PLAYING_DATE"),
-//                        resultSet.getDouble("SCORE"));
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
 }
 
 
