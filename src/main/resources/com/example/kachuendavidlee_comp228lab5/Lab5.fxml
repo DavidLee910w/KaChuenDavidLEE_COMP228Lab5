@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.kachuendavidlee_comp228lab5.Lab5Controller">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <TitledPane text="Player Information" expanded="true">
+                <VBox spacing="5">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <HBox spacing="10">
+                        <Label text="Player ID:" />
+                        <TextField fx:id="playerIdField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="First Name:" />
+                        <TextField fx:id="firstNameField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Last Name:" />
+                        <TextField fx:id="lastNameField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Address:" />
+                        <TextField fx:id="addressField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Postal Code:" />
+                        <TextField fx:id="postalCodeField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Province:" />
+                        <TextField fx:id="provinceField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Phone Number:" />
+                        <TextField fx:id="phoneNumberField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Button text="Insert Player" fx:id="insertPlayerButton" onAction="#handleInsertPlayer" />
+                        <Button text="Update Player" fx:id="updatePlayerButton" onAction="#handleUpdatePlayer" />
+                    </HBox>
+                </VBox>
+            </TitledPane>
+
+            <TitledPane text="Game Information" expanded="true">
+                <VBox spacing="5">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <HBox spacing="10">
+                        <Label text="Game ID:" />
+                        <TextField fx:id="gameIdField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Game Title:" />
+                        <TextField fx:id="gameTitleField" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Button text="Insert Game" fx:id="insertGameButton" onAction="#handleInsertGame" />
+                    </HBox>
+                </VBox>
+            </TitledPane>
+
+            <TitledPane text="Player and Game Relationship" expanded="false">
+                <VBox>
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <!-- Future expansion for relationships -->
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </top>
+</BorderPane>
